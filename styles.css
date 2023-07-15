@@ -1,0 +1,15 @@
+.sidebar {
+    min-height: 95vh;
+    max-height: 95vh;
+}
+
+.stack {
+    min-height: 50vh;
+    max-height: 50vh;
+    overflow: scroll;
+}
+
+.logP {
+    max-height: 30vh;
+    overflow: scroll;
+}
