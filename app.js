@@ -29,10 +29,12 @@ const stackDiv         = document.getElementById("stack");
 const resolveButton    = document.getElementById("resolve");
 const copyButton       = document.getElementById("copy");
 const bounceButton     = document.getElementById("bounce");
+const passButton       = document.getElementById("pass");
 
 resolveButton.addEventListener("click", resolveStackEntry);
 copyButton.addEventListener("click", copySpell);
 bounceButton.addEventListener("click", bounceSpell);
+passButton.addEventListener("click", passTurn);
 
 
 const headsCounter     = document.getElementById("heads-counter");
@@ -352,4 +354,17 @@ function resolveRitual(e,v){
         stackElements.pop();
         log(`${e.key} was bounced; nothing to resolve`);
     }
+}
+
+function passTurn(){
+    log(`Passed Turn, Emptying Mana Pool and Resetting Storm Count`);
+    board['red']['qty']=0;
+    board['red']['counter'].innerText = board['red']['qty'];
+    
+    board['storm']['qty']=0;
+    board['storm']['counter'].innerText = board['storm']['qty'];
+    
+    board['blue']['qty']=0;
+    board['blue']['counter'].innerText = board['blue']['qty'];
+    
 }
